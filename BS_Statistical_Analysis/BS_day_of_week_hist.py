@@ -24,30 +24,9 @@ hour_df = pd.read_csv('hour.csv')
 day_array = np.array(day_df.values)
 hour_array = np.array(hour_df.values)
 
-
-# =============================================================================
-# # Sort into seasonal dataframes
-# Spring_hour_df = hour_df.loc[hour_df['season'] == 1]
-# Summer_hour_df = hour_df.loc[hour_df['season'] == 2]
-# Fall_hour_df   = hour_df.loc[hour_df['season'] == 3]
-# Winter_hour_df = hour_df.loc[hour_df['season'] == 4]
-# 
-# #Make annual data frames
-# day_df_2011 = day_df.loc[day_df['yr'] == 0]
-# day_df_2012 = day_df.loc[day_df['yr'] == 1]
-# 
-# #Make annual data frames
-# hour_df_2011 = hour_df.loc[hour_df['yr'] == 0]
-# hour_df_2012 = hour_df.loc[hour_df['yr'] == 1]
-# 
-# hour_counts    = hour_df['cnt'].values
-# hour_counts_11 = hour_df_2011['cnt'].values
-# hour_counts_12 = hour_df_2012['cnt'].values
-# =============================================================================
-
 day_df.plot(y = 'cnt')
 plt.title('2011-2012 count of users per hour')
-plt.xlabel('Windspeed (mph) ')
+plt.xlabel('Day (dates in order beginning in 2011)')
 plt.ylabel('User count')
 plt.show()
 plt.clf()
@@ -67,21 +46,13 @@ hour_holiday_NonHoliday = hour_df_NonHoliday.mean()
 
 
 # =============================================================================
-# hour_df_holiday.plot(y = 'cnt')
+# hour_df_NonHoliday.plot(y = 'cnt')
 # plt.title('2011-2012 count of users per hour')
-# plt.xlabel('index')
+# plt.xlabel('Windspeed (mph) ')
 # plt.ylabel('User count')
 # plt.show()
 # plt.clf()
-# 
 # =============================================================================
-
-hour_df_NonHoliday.plot(y = 'cnt')
-plt.title('2011-2012 count of users per hour')
-plt.xlabel('Windspeed (mph) ')
-plt.ylabel('User count')
-plt.show()
-plt.clf()
 
 
 # Holidays are not causing the issues
