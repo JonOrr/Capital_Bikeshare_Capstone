@@ -120,3 +120,27 @@ plt.yticks(y_lin)
 plt.show()
 plt.clf()
 
+
+x = hour_df['hr'].values
+y = hour_df['registered'].values
+y_lin = np.linspace(0, 1000, 11)
+
+sns.boxplot(x, y)
+plt.title('2011-2012 count of users per hour')
+plt.xlabel('Hour of the day, (24hr clock)')
+plt.ylabel('Registered user ride count')
+plt.yticks(y_lin)
+plt.show()
+plt.clf()
+
+x = hour_df['hr'].values
+y = hour_df['casual'].values
+y_lin = np.linspace(0, 1000, 11)
+
+sns.boxplot(x, y)
+plt.title('2011-2012 count of users per hour')
+plt.xlabel('Hour of the day, (24hr clock)')
+plt.ylabel('Casual user ride count')
+plt.yticks(y_lin)
+plt.show()
+plt.clf()
